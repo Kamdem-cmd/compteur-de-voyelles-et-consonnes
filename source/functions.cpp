@@ -3,11 +3,12 @@
 int compte_mots(const char *phrase){
     //Pointeur vers phrase
     const char *ptr = phrase;
+    //initialisation du compteur
     int count = 0;
 
-    //Décompte du nombre de mots a partir des espaces
+    //Décompte du nombre de mots afin de compter les mots non vides
     while(*ptr != '\0'){
-        if(*ptr == ' '){
+        if(*ptr == ' ' && *ptr++ != ' '){
             count++;
         }
         ptr++;
@@ -19,6 +20,7 @@ int compte_mots(const char *phrase){
 int compte_spaces(const char *phrase){
     //Pointeur vers phrase
     const char *ptr = phrase;
+    //initialisation du compteur
     int count = 0;
 
     //Décompte du nombre d'espaces
