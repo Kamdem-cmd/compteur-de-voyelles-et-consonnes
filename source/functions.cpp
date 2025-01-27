@@ -8,7 +8,7 @@ int compte_mots(const char *phrase){
 
     //Décompte du nombre de mots afin de compter les mots non vides
     while(*ptr != '\0'){
-        if(*ptr == ' ' && *ptr++ != ' '){
+        if(*ptr == ' ' && *++ptr != ' '){
             count++;
         }
         ptr++;
