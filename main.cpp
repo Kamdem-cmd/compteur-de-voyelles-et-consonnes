@@ -3,7 +3,7 @@
 #include "header/header.h"
 
 int main(int argc, char ** argv[]){
-    int const taille = 250;
+    const int taille = 250;
     char phrase[taille];
     int voyelles = 0;
     int consonnes = 0; 
