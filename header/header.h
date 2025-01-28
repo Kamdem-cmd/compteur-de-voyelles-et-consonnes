@@ -7,6 +7,6 @@ int compte_voy(const char *phrase);
 int compte_cons(const char *phrase);
 int compte_mots(const char *phrase);
 int compte_spaces(const char *phrase);
-int countSyllables(const char* word);
+int compte_syllables(const char* mot);
 
 #endif

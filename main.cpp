@@ -16,7 +16,7 @@ int main(int argc, char ** argv[]){
     voyelles = compte_voy(phrase);
 
     // affichage du nombres de voyelles et consonnes
-    std::cout <<"voyelles: " << voyelles << "\nconsonnes: " << consonnes;
+    std::cout << "\nconsonnes: " << consonnes <<"voyelles: " << voyelles <<std::endl;
 
     return 0;
 }

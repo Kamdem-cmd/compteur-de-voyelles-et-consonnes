@@ -38,9 +38,9 @@ int compte_cons(const char *phrase){
 
         ptr++; 
     }
+
     return consonnes;
 }
-
 
 //Fonction pour le décompte des mots dans une phrase
 int compte_mots(const char *phrase){
@@ -78,8 +78,34 @@ int compte_spaces(const char *phrase){
     return count;
 }
 
+//FOnction pour extraire les mots d'une chaine de caractère
+char** extraire_mots(const char* phrase, int& nbr_mots) {
+    //Pointeur vers la phrase
+    const char *ptr = phrase;
+
+    //Taille initiale du tableau
+    int max_mots = 10;
+    //Initialisation du nombre de mots
+    nbr_mots = 0;
+
+    //Creation du tableau contenant tous les mots
+    char** mots = new char*[max_mots];
+
+    // Extraire les mots un par un
+    while (*ptr != '\0') {
+        // Ignorer les espaces
+        while (*ptr == ' ') {
+            ptr++;
+        }
+
+        
+    }
+
+    return mots; // Retourner le tableau de mots
+}
+
 //Fonction pour le décompte des syllabes dans un mot
-int countSyllables(const char* mot) {
+int compte_syllables(const char* mot) {
     //initialisation du compteur
     int count = 0;
     //Temoin pour vérifier que le caractère précédent est une voyelle
