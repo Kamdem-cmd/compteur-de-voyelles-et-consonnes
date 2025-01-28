@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main(int argc, char ** argv[]){
+int main(int argc, char** argv[]){
     int const taille = 250;
     char phrase[taille];
     int voyelles = 0;
