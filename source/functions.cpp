@@ -37,16 +37,16 @@ int compte_spaces(const char *phrase){
 }
 
 //Fonction pour le décompte des syllabes dans un mot
-int countSyllables(const char* word) {
+int countSyllables(const char* mot) {
     //initialisation du compteur
     int count = 0;
     //Temoin pour vérifier que le caractère précédent est une voyelle
     bool prevVowel = false;
 
     //Parcours du mot
-    for(int i = 0; word[i] != '\0'; i++) {
+    for(int i = 0; mot[i] != '\0'; i++) {
         //Conversion en minuscule
-        char c = (word[i] >= 'A' && word[i] <= 'Z') ? word[i] + 32 : word[i];
+        char c = (mot[i] >= 'A' && mot[i] <= 'Z') ? mot[i] + 32 : mot[i];
         //Verification de la nature du caractère (Voyelle)
         bool isVow = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y');
         
