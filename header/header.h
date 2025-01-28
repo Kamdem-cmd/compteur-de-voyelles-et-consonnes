@@ -8,5 +8,6 @@ int compte_cons(const char *phrase);
 int compte_mots(const char *phrase);
 int compte_spaces(const char *phrase);
 int compte_syllables(const char* mot);
+char** extraire_mots(const char* phrase, int& nbr_mots);
 
 #endif

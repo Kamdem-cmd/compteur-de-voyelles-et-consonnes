@@ -85,6 +85,7 @@ char** extraire_mots(const char* phrase, int& nbr_mots) {
 
     //Taille initiale du tableau
     int max_mots = 10;
+
     //Initialisation du nombre de mots
     nbr_mots = 0;
 
@@ -98,7 +99,7 @@ char** extraire_mots(const char* phrase, int& nbr_mots) {
             ptr++;
         }
 
-        
+
     }
 
     return mots; // Retourner le tableau de mots
