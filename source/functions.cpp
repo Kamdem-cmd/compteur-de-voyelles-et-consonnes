@@ -1,5 +1,6 @@
 #include "../header/header.h"
 
+//Fonction pour le décompte des mots dans une phrase
 int compte_mots(const char *phrase){
     //Pointeur vers phrase
     const char *ptr = phrase;
@@ -17,6 +18,7 @@ int compte_mots(const char *phrase){
     return count + 1;
 }
 
+//Fonction pour le décompte des espaces dans une phrase
 int compte_spaces(const char *phrase){
     //Pointeur vers phrase
     const char *ptr = phrase;
@@ -34,9 +36,11 @@ int compte_spaces(const char *phrase){
     return count;
 }
 
+//Fonction pour le décompte des syllabes dans un mot
 int countSyllables(const char* word) {
     //initialisation du compteur
     int count = 0;
+    //Temoin pour vérifier que le caractère précédent est une voyelle
     bool prevVowel = false;
 
     //Parcours du mot
@@ -46,13 +50,16 @@ int countSyllables(const char* word) {
         //Verification de la nature du caractère (Voyelle)
         bool isVow = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y');
         
-        
+        //Vérifie si le caractère est une voyelle et si le caractère précedent était une voyelle
+        //(Marche si le caractère est une voyelle et si le précedent ne l'était pas, pour éviter de compter au comme deux syllabes)
         if(isVow && !prevVowel) {
             count++;
         }
+
+        //Afin de déterminer si le caractère sera une voyelle  pour la  prochaine itération
         prevVowel = isVow;
     }
-    
-    return count > 0 ? count : 1;
+
+    return count;
 }
 
