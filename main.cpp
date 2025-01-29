@@ -73,7 +73,6 @@ int main(int argc, char ** argv[]){
         ptr++; 
     }
 
-
     // affichage du nombres de voyelles et consonnes
     std::cout <<"voyelles: " << voyelles << "\nconsonnes: " << consonnes << "\n";
     
@@ -83,20 +82,12 @@ int main(int argc, char ** argv[]){
     // affichage du nombres de mots et espaces
     std::cout <<"espaces: " << spaces << "\nmots: " << nbMots << "\n";
 
-<<<<<<< HEAD
-=======
     // Affichage des mots extraits
     std::cout << "\nMots extraits : \n";
     for (int i = 0; i < nbMots; i++) {
         std::cout << "mot_" << i+1 << ": " << mots[i] << "\t syllabes: " << compte_syllables(mots[i]) << "\n" ;
     }
 
-   /* // Libérer la mémoire allouée pour chaque mot
-    for (int i = 0; i < nbMots; i++) {
-        delete[] mots[i]; 
-    }*/
-
->>>>>>> ba099c9ecd2359d2781d54efb116554323f89045
     return 0;
 }
 
