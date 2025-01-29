@@ -75,7 +75,7 @@ void extraireMots(char *phrase, char mots[][20], int &nbMots) {
     nbMots = 0;
 
     while (*phrase != '\0') {
-        if (*phrase == ' ' || *(phrase + 1) == '\0') {
+        if (*phrase == ' ' || *(phrase + 1) == '\0' || *phrase == ',' || *phrase == '.' || *phrase == ';' || *phrase == ':') { 
             // Inclure le dernier caractère si c'est la fin de la chaîne
             if (*(phrase + 1) == '\0') {
                 phrase++;
