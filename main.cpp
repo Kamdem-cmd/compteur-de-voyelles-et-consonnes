@@ -2,6 +2,8 @@
 
 #include "header/header.h"
 
+int compte_syllables(const char* mot);
+
 void extraireMots(char *phrase, char mots[][20], int &nbMots) {
     char *debutMot = phrase;
     nbMots = 0;
@@ -72,19 +74,52 @@ int main(int argc, char ** argv[]){
     }
 
 
-    extraireMots(phrase, mots, nbMots);
-
-    // Affichage des mots extraits
-    std::cout << "Mots extraits : ";
-    for (int i = 0; i < nbMots; i++) {
-        std::cout << mots[i] << "\n" ;
-    }
-
     // affichage du nombres de voyelles et consonnes
     std::cout <<"voyelles: " << voyelles << "\nconsonnes: " << consonnes << "\n";
+    
+    //extraction de mot
+    extraireMots(phrase, mots, nbMots);
 
     // affichage du nombres de mots et espaces
     std::cout <<"espaces: " << spaces << "\nmots: " << nbMots << "\n";
 
+<<<<<<< HEAD
+=======
+    // Affichage des mots extraits
+    std::cout << "\nMots extraits : \n";
+    for (int i = 0; i < nbMots; i++) {
+        std::cout << "mot_" << i+1 << ": " << mots[i] << "\t syllabes: " << compte_syllables(mots[i]) << "\n" ;
+    }
+
+   /* // Libérer la mémoire allouée pour chaque mot
+    for (int i = 0; i < nbMots; i++) {
+        delete[] mots[i]; 
+    }*/
+
+>>>>>>> ba099c9ecd2359d2781d54efb116554323f89045
     return 0;
+}
+
+int compte_syllables(const char* mot) {
+    //initialisation du compteur
+    int count = 0;
+    //Temoin pour vérifier que le caractère précédent est une voyelle
+    bool prevVowel = false;
+
+    //Parcours du mot
+    for(int i = 0; mot[i] != '\0'; i++) {
+        //Conversion en minuscule
+        char c = (mot[i] >= 'A' && mot[i] <= 'Z') ? mot[i] + 32 : mot[i];
+        //Verification de la nature du caractère (Voyelle)
+        bool isVow = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y');
+        
+        //Vérifie si le caractère est une voyelle et si le caractère précedent était une voyelle
+        //(Marche si le caractère est une voyelle et si le précedent ne l'était pas, pour éviter de compter au comme deux syllabes)
+        if(isVow && !prevVowel) {
+            count++;
+        }
+
+        //Afin de déterminer si le caractère sera une voyelle  pour la  prochaine itération
+        prevVowel = isVow;
+    }
 }
