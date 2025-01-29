@@ -7,7 +7,6 @@ int compte_syllables(const char* mot);
 void extraireMots(char *phrase, char mots[][20], int &nbMots) {
     char *debutMot = phrase;
     nbMots = 0;
-    int indexMot = 0;
 
     while (*phrase != '\0') {
         if (*phrase == ' ' || *(phrase + 1) == '\0') {
