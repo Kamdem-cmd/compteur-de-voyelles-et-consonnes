@@ -91,6 +91,7 @@ int main(int argc, char ** argv[]){
     return 0;
 }
 
+//Fonction pour le décompte des syllabes dans un mot
 int compte_syllables(const char* mot) {
     //initialisation du compteur
     int count = 0;
@@ -113,4 +114,6 @@ int compte_syllables(const char* mot) {
         //Afin de déterminer si le caractère sera une voyelle  pour la  prochaine itération
         prevVowel = isVow;
     }
+
+    return count;
 }
