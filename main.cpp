@@ -15,12 +15,11 @@ int main(int argc, char ** argv[]){
     int spaces = 0;
     int mot = 0; 
     int nombre = 0;
-
+    
     // operations pour la recuperation de phrase
     std::cout << ">> " ;
     std::cin.getline(phrase, taille);
 
-    
     //Pointeur vers phrase
     char* ptr = phrase;
 
@@ -39,8 +38,9 @@ int main(int argc, char ** argv[]){
             *ptr =='h'-32|| *ptr =='j'-32|| *ptr =='k'-32|| *ptr =='l'-32|| *ptr =='m'-32|| *ptr =='n'-32||
             *ptr =='p'-32|| *ptr =='q'-32|| *ptr =='r'-32|| *ptr =='s'-32|| *ptr =='t'-32|| *ptr =='v'-32|| 
             *ptr =='w'-32|| *ptr =='x'-32) consonnes++; // majiscules
- 
-        if(*ptr == ' ')spaces++;        //Décompte du nombre d'espaces
+        
+        //Décompte du nombre d'espaces
+        if(*ptr == ' ')spaces++;        
 
         ptr++; 
     }
