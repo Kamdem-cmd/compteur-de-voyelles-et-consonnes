@@ -78,7 +78,7 @@ int compte_spaces(const char *phrase){
     return count;
 }
 
-//FOnction pour extraire les mots d'une chaine de caractère
+//Fonction pour extraire les mots d'une chaine de caractère
 char** extraire_mots(const char* phrase, int& nbr_mots) {
     //Pointeur vers la phrase
     const char *ptr = phrase;
@@ -94,12 +94,19 @@ char** extraire_mots(const char* phrase, int& nbr_mots) {
 
     // Extraire les mots un par un
     while (*ptr != '\0') {
-        // Ignorer les espaces
-        while (*ptr == ' ') {
-            ptr++;
+        //Affection des caractères de chaque mots
+        while (*ptr != ' ') {
+            if ((*ptr >= 'A' && *ptr <= 'Z') || (*ptr >= 'a' && *ptr <= 'z')) {
+                **mots = *ptr; 
+                ptr++;
+                *mots++;
+            } else {
+                ptr++;
+            }
         }
-
-
+        **mots = '\0';
+        mots++;
+        nbr_mots++;
     }
 
     return mots; // Retourner le tableau de mots
