@@ -1,34 +1,8 @@
 #include <iostream>
 
-#include "header/header.h"
-
 int compte_syllables(const char* mot);
 
-void extraireMots(char *phrase, char mots[][20], int &nbMots) {
-    char *debutMot = phrase;
-    nbMots = 0;
-
-    while (*phrase != '\0') {
-        if (*phrase == ' ' || *(phrase + 1) == '\0') {
-            // Inclure le dernier caractère si c'est la fin de la chaîne
-            if (*(phrase + 1) == '\0') {
-                phrase++;
-            }
-
-            // Copier le mot dans le tableau mots
-            int j = 0;
-            for (char *p = debutMot; p < phrase; p++) {
-                mots[nbMots][j++] = *p;
-            }
-            mots[nbMots][j] = '\0'; // Ajouter le caractère de fin de chaîne
-            nbMots++;
-
-            // Réinitialisation pour le mot suivant
-            debutMot = phrase + 1;
-        }
-        phrase++;
-    }
-}
+void extraireMots(char *phrase, char mots[][20], int &nbMots);
 
 int main(int argc, char ** argv[]){
     const int taille = 250;
@@ -88,6 +62,34 @@ int main(int argc, char ** argv[]){
     }
 
     return 0;
+}
+
+
+//Fonction pour l'extraction des mots dans une phrase
+void extraireMots(char *phrase, char mots[][20], int &nbMots) {
+    char *debutMot = phrase;
+    nbMots = 0;
+
+    while (*phrase != '\0') {
+        if (*phrase == ' ' || *(phrase + 1) == '\0') {
+            // Inclure le dernier caractère si c'est la fin de la chaîne
+            if (*(phrase + 1) == '\0') {
+                phrase++;
+            }
+
+            // Copier le mot dans le tableau mots
+            int j = 0;
+            for (char *p = debutMot; p < phrase; p++) {
+                mots[nbMots][j++] = *p;
+            }
+            mots[nbMots][j] = '\0'; // Ajouter le caractère de fin de chaîne
+            nbMots++;
+
+            // Réinitialisation pour le mot suivant
+            debutMot = phrase + 1;
+        }
+        phrase++;
+    }
 }
 
 //Fonction pour le décompte des syllabes dans un mot
