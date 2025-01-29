@@ -31,7 +31,7 @@ int main(int argc, char ** argv[]){
     std::cout <<"voyelles: " << voyelles << "\nconsonnes: " << consonnes << "\n";
 
     // affichage du nombres de mots et espaces
-    std::cout <<"espaces: " << voyelles << "\nmots: " << consonnes << "\n";
+    std::cout <<"espaces: " << spaces << "\nmots: " << mots << "\n";
 
     return 0;
 }
