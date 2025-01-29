@@ -65,7 +65,8 @@ int main(int argc, char ** argv[]){
             *ptr =='p'-32|| *ptr =='q'-32|| *ptr =='r'-32|| *ptr =='s'-32|| *ptr =='t'-32|| *ptr =='v'-32|| 
             *ptr =='w'-32|| *ptr =='x'-32) consonnes++; // majiscules
  
-        if(*ptr == ' ')spaces++;        //Décompte du nombre d'espaces
+        //Décompte du nombre d'espaces
+        if(*ptr == ' ')spaces++;        
 
         ptr++; 
     }
@@ -78,19 +79,12 @@ int main(int argc, char ** argv[]){
     for (int i = 0; i < nbMots; i++) {
         std::cout << mots[i] << "\n" ;
     }
-    
 
     // affichage du nombres de voyelles et consonnes
     std::cout <<"voyelles: " << voyelles << "\nconsonnes: " << consonnes << "\n";
 
     // affichage du nombres de mots et espaces
     std::cout <<"espaces: " << spaces << "\nmots: " << nbMots << "\n";
-
-    /*std::cout << "Mots extraits : " << std::endl;
-    for (int i = 0; i < nombre; ++i) {
-        std::cout << mots_extraits[i] << std::endl;
-        delete[] mots_extraits[i]; // Libérer la mémoire allouée pour chaque mot
-    }*/
 
     return 0;
 }
