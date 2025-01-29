@@ -46,19 +46,23 @@ int main(int argc, char ** argv[]){
         ptr++; 
     }
 
+    std::cout <<"________________________________________"<<std::endl;
+
     // affichage du nombres de voyelles et consonnes
-    std::cout <<"voyelles: " << voyelles << "\nconsonnes: " << consonnes << "\n";
+    std::cout <<"\nVoyelles: \033[32m" << voyelles << "\033[0m\nConsonnes: \033[32m" << consonnes << "\033[0m\n";
     
     //extraction de mot
     extraireMots(phrase, mots, nbMots);
 
     // affichage du nombres de mots et espaces
-    std::cout <<"espaces: " << spaces << "\nmots: " << nbMots << "\n";
+    std::cout <<"Espaces: \033[32m" << spaces << "\033[0m\nMots: \033[32m" << nbMots << "\033[0m\n";
+
+    std::cout <<"________________________________________"<<std::endl;
 
     // Affichage des mots extraits
     std::cout << "\nMots extraits : \n";
     for (int i = 0; i < nbMots; i++) {
-        std::cout << "mot_" << i+1 << ": " << mots[i] << "\t syllabes: " << compte_syllables(mots[i]) << "\n" ;
+        std::cout << "mot_" << i+1 << ": \033[32m" << mots[i] << "\033[0m\t Syllabes: \033[32m" << compte_syllables(mots[i]) << "\033[0m\n" ;
     }
 
     return 0;
