@@ -7,6 +7,8 @@ int main(int argc, char ** argv[]){
     char phrase[taille];
     int voyelles = 0;
     int consonnes = 0; 
+    int spaces = 0;
+    int mots = 0; 
     // operations pour la recuperation de phrase
     std::cout << ">> " ;
     std::cin.getline(phrase, taille);
@@ -19,19 +21,19 @@ int main(int argc, char ** argv[]){
 
 
     int nombre = 0;
-    char** mots = extraire_mots(phrase, nombre);
-
-    std::cout << "Mots extraits : " << std::endl;
-    for (int i = 0; i < nombre; ++i) {
-        std::cout << mots[i] << std::endl;
-        delete[] mots[i]; // Libérer la mémoire allouée pour chaque mot
-    }
+    char** mots_extraits = extraire_mots(phrase, nombre);
 
     // affichage du nombres de voyelles et consonnes
     std::cout <<"voyelles: " << voyelles << "\nconsonnes: " << consonnes << "\n";
 
     // affichage du nombres de mots et espaces
     std::cout <<"espaces: " << spaces << "\nmots: " << mots << "\n";
+
+    std::cout << "Mots extraits : " << std::endl;
+    for (int i = 0; i < nombre; ++i) {
+        std::cout << mots_extraits[i] << std::endl;
+        delete[] mots_extraits[i]; // Libérer la mémoire allouée pour chaque mot
+    }
 
     return 0;
 }
