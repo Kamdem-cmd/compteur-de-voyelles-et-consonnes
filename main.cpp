@@ -17,13 +17,12 @@ int main(int argc, char ** argv[]){
     int nombre = 0;
 
     //texte fantaisiste
-    std::cout << "\n\n  d8\t\t\t  d8\n d88\t,e e,   Y8b Y8Y  d88\t,e e,\nd88888 d88 88b   Y8b Y  d88888 d88 88b\n 888   888   ,  e Y8b \t 888   888   ,\n 888\t'YeeP' d8b Y8b   888\t'YeeP'\n\n\n"; 
+    std::cout << "\n\n \033[32m d8\t\t\t  d8\n d88\t,e e,   Y8b Y8Y  d88\t,e e,\nd88888 d88 88b   Y8b Y  d88888 d88 88b\n 888   888   ,  e Y8b \t 888   888   ,\n 888\t'YeeP' d8b Y8b   888\t'YeeP' \033[0m \n\n\n"; 
 
     // operations pour la recuperation de phrase
     std::cout << ">> " ;
     std::cin.getline(phrase, taille);
 
-    
     //Pointeur vers phrase
     char* ptr = phrase;
 
