@@ -78,39 +78,6 @@ int compte_spaces(const char *phrase){
     return count;
 }
 
-//Fonction pour extraire les mots d'une chaine de caractère
-char** extraire_mots(const char* phrase, int& nbr_mots) {
-    //Pointeur vers la phrase
-    const char *ptr = phrase;
-
-    //Taille initiale du tableau
-    int max_mots = 10;
-
-    //Initialisation du nombre de mots
-    nbr_mots = 0;
-
-    //Creation du tableau contenant tous les mots
-    char** mots = new char*[max_mots];
-
-    // Extraire les mots un par un
-    while (*ptr != '\0') {
-        //Affection des caractères de chaque mots
-        while (*ptr != ' ') {
-            if ((*ptr >= 'A' && *ptr <= 'Z') || (*ptr >= 'a' && *ptr <= 'z')) {
-                **mots = *ptr; 
-                ptr++;
-                *mots++;
-            } else {
-                ptr++;
-            }
-        }
-        **mots = '\0';
-        mots++;
-        nbr_mots++;
-    }
-
-    return mots; // Retourner le tableau de mots
-}
 
 //Fonction pour le décompte des syllabes dans un mot
 int compte_syllables(const char* mot) {
