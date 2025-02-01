@@ -27,25 +27,20 @@ int main(int argc, char ** argv[]){
     char* ptr = phrase;
 
     while(*ptr != '\0'){
+        // verification de la nature du caractère
+        if(*ptr >='a' && *ptr <='z' || *ptr >='A' && *ptr <='Z'){   
 
-        // Décompte du nombre de voyelles
+            // Décompte du nombre de voyelles
         if(*ptr =='a'|| *ptr =='e'|| *ptr =='i'|| *ptr =='o'|| *ptr =='u'|| *ptr =='y') voyelles++; // miniscules
-        if(*ptr =='a'-32|| *ptr =='e'-32|| *ptr =='i'-32|| *ptr =='o'-32|| *ptr =='u'-32|| *ptr =='y'-32)voyelles++; // majiscules
+        else if (*ptr =='a'-32|| *ptr =='e'-32|| *ptr =='i'-32|| *ptr =='o'-32|| *ptr =='u'-32|| *ptr =='y'-32)voyelles++; // majiscules
+        else consonnes++;   // Décompte du nombre de consonnes
 
-        // Décompte du nombre de consonnes
-        if(*ptr =='b'|| *ptr =='c'|| *ptr =='d'|| *ptr =='z'|| *ptr =='f'|| *ptr =='g'||
-            *ptr =='h'|| *ptr =='j'|| *ptr =='k'|| *ptr =='l'|| *ptr =='m'|| *ptr =='n'||
-            *ptr =='p'|| *ptr =='q'|| *ptr =='r'|| *ptr =='s'|| *ptr =='t'|| *ptr =='v'|| 
-            *ptr =='w'|| *ptr =='x') consonnes++; // miniscules
-        if(*ptr =='b'-32|| *ptr =='c'-32|| *ptr =='d'-32|| *ptr =='z'-32|| *ptr =='f'-32|| *ptr =='g'-32||
-            *ptr =='h'-32|| *ptr =='j'-32|| *ptr =='k'-32|| *ptr =='l'-32|| *ptr =='m'-32|| *ptr =='n'-32||
-            *ptr =='p'-32|| *ptr =='q'-32|| *ptr =='r'-32|| *ptr =='s'-32|| *ptr =='t'-32|| *ptr =='v'-32|| 
-            *ptr =='w'-32|| *ptr =='x'-32) consonnes++; // majiscules
- 
+        }
+        
         //Décompte du nombre d'espaces
         if(*ptr == ' ')spaces++;        
 
-        ptr++; 
+        ptr++; // passe au caractère suivant de la phrase
     }
 
     std::cout <<"________________________________________"<<std::endl;
